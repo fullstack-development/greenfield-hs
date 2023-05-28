@@ -1,0 +1,64 @@
+name:                greenfield-hs-cli
+version:             0.1.0.0
+github:              "fullstack-development/greenfield-hs"
+license:             BSD3
+author:              "Evgeny Osipenko"
+maintainer:          "evgeny.osipenko@metalamp.io"
+copyright:           "Metalamp, 2023"
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            blockchain
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/fullstack-development/greenfield-hs#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- hs-abci-extra
+- hs-abci-server
+- hs-abci-sdk
+- hs-abci-types
+- hs-tendermint-client
+- iris
+- mtl
+- text 
+- optparse-applicative
+- greenfield-hs-node-rpc
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+
+library:
+  source-dirs: src
+
+executables:
+  greenfield-hs-cli-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - greenfield-hs-cli
+
+tests:
+  greenfield-hs-cli-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - greenfield-hs-cli

@@ -1,0 +1,33 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.35.2.
+--
+-- see: https://github.com/sol/hpack
+
+name:           greenfield-hs-lang
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/fullstack-development/greenfield-hs#readme>
+homepage:       https://github.com/fullstack-development/greenfield-hs#readme
+bug-reports:    https://github.com/fullstack-development/greenfield-hs/issues
+author:         Evgeny Osipenko
+maintainer:     evgeny.osipenko@metalamp.io
+copyright:      Metalamp, 2023
+license:        BSD3
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/fullstack-development/greenfield-hs
+
+library
+  exposed-modules:
+      Greenfield.Lang
+  other-modules:
+      Paths_greenfield_hs_lang
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+  default-language: Haskell2010

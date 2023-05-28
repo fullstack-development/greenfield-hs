@@ -1,0 +1,40 @@
+name:                greenfield-hs-proto-types
+version:             0.1.0.0
+github:              "fullstack-development/greenfield-hs"
+license:             BSD3
+author:              "Evgeny Osipenko"
+maintainer:          "evgeny.osipenko@metalamp.io"
+copyright:           "Metalamp, 2023"
+
+description:         Please see the README on GitHub at <https://github.com/fullstack-development/greenfield-hs#readme>
+
+extra-source-files:
+- protos/**/*.proto
+
+custom-setup:
+  dependencies:
+    - base
+    - Cabal
+    - proto-lens-setup
+
+dependencies:
+- base >= 4.7 && < 5
+- proto-lens-protoc
+- proto-lens-runtime
+- proto-lens-protobuf-types
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+
+library:
+  source-dirs: src
+  generated-exposed-modules:
+  - Proto.Cosmos.Crypto.Eth.Ethsecp256k1
+  - Proto.Cosmos.Crypto.Eth.Ethsecp256k1_Fields

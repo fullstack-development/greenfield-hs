@@ -1,0 +1,40 @@
+resolver: lts-20.22
+
+allow-newer: true
+
+packages:
+- greenfield-hs-cli
+- greenfield-hs-lang
+- greenfield-hs-node-rpc
+- greenfield-hs-proto-types
+- greenfield-hs-grpc
+
+extra-deps:
+- http2-client-0.10.0.0
+- proto-lens-jsonpb-0.2.2
+- proto3-suite-0.5.1
+- proto3-wire-1.4.0
+- iris-0.1.0.0
+
+- git: https://github.com/evgeny-osipenko/kepler
+  commit: 6e5c3908761bfce0faf83440668b404ca6a13339
+  subdirs:
+  - hs-abci-extra
+  - hs-abci-server
+  - hs-abci-sdk
+  - hs-abci-types
+  - hs-iavl-client
+  - hs-tendermint-client
+
+- git: https://github.com/oscoin/avl-auth
+  commit: dfc468845a82cdd7d759943b20853999bc026505
+
+- git: https://github.com/evgeny-osipenko/http2-grpc-haskell
+  commit: 40d677c0c490b659164ca524cab627827ee6fd80
+  subdirs:
+    - http2-client-grpc
+    - http2-grpc-types
+    - http2-grpc-proto-lens
+
+- git: https://github.com/evgeny-osipenko/secp256k1-haskell
+  commit: b72c44b34c59c79ecce6eb93933d7a78cd888cf5

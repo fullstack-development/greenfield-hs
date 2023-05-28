@@ -1,0 +1,101 @@
+name:                greenfield-hs-node-rpc
+version:             0.1.0.0
+github:              "fullstack-development/greenfield-hs"
+license:             BSD3
+author:              "Evgeny Osipenko"
+maintainer:          "evgeny.osipenko@metalamp.io"
+copyright:           "Metalamp, 2023"
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            blockchain
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/fullstack-development/greenfield-hs#readme>
+
+default-extensions:
+- DataKinds
+- DeriveGeneric
+- DuplicateRecordFields
+- FlexibleContexts
+- FlexibleInstances
+- FunctionalDependencies
+- GADTs
+- KindSignatures
+- LambdaCase
+- MultiParamTypeClasses
+- OverloadedLabels
+- OverloadedStrings
+- RankNTypes
+- RecordWildCards
+- ScopedTypeVariables
+- TypeApplications
+- UndecidableInstances
+
+dependencies:
+- base >= 4.7 && < 5
+- aeson
+- base16
+- base64
+- bech32
+- bytestring
+- cryptonite
+- generic-lens
+- greenfield-hs-proto-types
+- exceptions
+# - hs-abci-extra
+# - hs-abci-server
+# - hs-abci-sdk
+# - hs-abci-types
+# - hs-tendermint-client
+- http2-client
+- http2-client-grpc
+- http2-grpc-proto-lens
+- lens
+- memory
+- modern-uri
+- mtl
+- proto-lens
+- proto-lens-jsonpb
+- proto-lens-protobuf-types
+- req
+- secp256k1-haskell
+- text
+- vector
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+
+library:
+  source-dirs: src
+
+executables:
+  greenfield-hs-node-rpc-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - greenfield-hs-node-rpc
+
+tests:
+  greenfield-hs-node-rpc-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - greenfield-hs-node-rpc
